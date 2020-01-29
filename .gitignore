@@ -1,0 +1,13 @@
+# IDE / OS / Java
+**/*.settings
+**/*.target
+**/*.classpath
+**/*.project
+**/*.idea
+**/*.iml
+**/*.DS_STORE
+**/*.vscode
+
+# Compilation
+**/*.class
+**/target

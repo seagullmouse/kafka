@@ -1,0 +1,376 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.4.RELEASE)
+
+2020-01-28 22:24:44.373  INFO 61680 --- [           main] c.h.y.reader.CSVReaderApplication        : Starting CSVReaderApplication v0.0.1-SNAPSHOT on MacBook-Pro.local with PID 61680 (/Users/matthewhersee/Documents/Development/OmniiLogic/YellowDog/reader/target/reader-0.0.1-SNAPSHOT.jar started by matthewhersee in /Users/matthewhersee/Documents/Development/OmniiLogic/YellowDog/reader)
+2020-01-28 22:24:44.377  INFO 61680 --- [           main] c.h.y.reader.CSVReaderApplication        : No active profile set, falling back to default profiles: default
+2020-01-28 22:24:45.484  INFO 61680 --- [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values:
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id =
+	client.rack =
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = csv-reader
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2020-01-28 22:24:45.676  INFO 61680 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 2.3.1
+2020-01-28 22:24:45.678  INFO 61680 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 18a913733fb71c01
+2020-01-28 22:24:45.678  INFO 61680 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1580250285674
+2020-01-28 22:24:45.682  INFO 61680 --- [           main] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-1, groupId=csv-reader] Subscribed to topic(s): trade.summary
+2020-01-28 22:24:45.683  INFO 61680 --- [           main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService
+2020-01-28 22:24:45.701  INFO 61680 --- [           main] c.h.y.reader.CSVReaderApplication        : Started CSVReaderApplication in 1.778 seconds (JVM running for 2.318)
+2020-01-28 22:24:45.727  INFO 61680 --- [           main] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values:
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id =
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.springframework.kafka.support.serializer.JsonSerializer
+
+2020-01-28 22:24:45.768  INFO 61680 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 2.3.1
+2020-01-28 22:24:45.769  INFO 61680 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 18a913733fb71c01
+2020-01-28 22:24:45.769  INFO 61680 --- [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1580250285768
+2020-01-28 22:24:45.921  INFO 61680 --- [ad | producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-1] Cluster ID: gxcsCfLNTA2aqXc0HQ-l5w
+2020-01-28 22:24:45.921  INFO 61680 --- [ntainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-1, groupId=csv-reader] Cluster ID: gxcsCfLNTA2aqXc0HQ-l5w
+2020-01-28 22:24:45.922  INFO 61680 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=csv-reader] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2020-01-28 22:24:45.925  INFO 61680 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-1, groupId=csv-reader] Revoking previously assigned partitions []
+2020-01-28 22:24:45.926  INFO 61680 --- [ntainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : csv-reader: partitions revoked: []
+2020-01-28 22:24:45.926  INFO 61680 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=csv-reader] (Re-)joining group
+2020-01-28 22:24:45.944  INFO 61680 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=csv-reader] (Re-)joining group
+2020-01-28 22:24:45.968  INFO 61680 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.AbstractCoordinator  : [Consumer clientId=consumer-1, groupId=csv-reader] Successfully joined group with generation 1
+2020-01-28 22:24:45.973  INFO 61680 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-1, groupId=csv-reader] Setting newly assigned partitions: trade.summary-0
+2020-01-28 22:24:45.993  INFO 61680 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-1, groupId=csv-reader] Found no committed offset for partition trade.summary-0
+2020-01-28 22:24:46.033  INFO 61680 --- [ntainer#0-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-1, groupId=csv-reader] Resetting offset for partition trade.summary-0 to offset 0.
+2020-01-28 22:24:46.061  INFO 61680 --- [ntainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : csv-reader: partitions assigned: [trade.summary-0]
+2020-01-28 22:27:37.712  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Afghanistan", imports=$109,228,874,411, exports=$8,780,222,349
+2020-01-28 22:27:37.713  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Albania", imports=$131,678,634,570, exports=$47,544,871,187
+2020-01-28 22:27:37.713  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Algeria", imports=$1,272,637,737,928, exports=$1,764,159,930,121
+2020-01-28 22:27:37.714  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Andorra", imports=$53,437,839,204, exports=$3,644,090,536
+2020-01-28 22:27:37.714  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Angola", imports=$349,876,599,227, exports=$868,304,901,687
+2020-01-28 22:27:37.714  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Anguilla", imports=$2,231,751,439, exports=$108,862,727
+2020-01-28 22:27:37.715  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Antigua and Barbuda", imports=$13,364,947,175, exports=$2,714,754,086
+2020-01-28 22:27:37.715  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Argentina", imports=$1,836,481,165,257, exports=$2,102,506,872,655
+2020-01-28 22:27:37.715  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Armenia", imports=$96,377,871,501, exports=$40,446,217,031
+2020-01-28 22:27:37.715  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Aruba", imports=$36,495,184,405, exports=$4,302,808,896
+2020-01-28 22:27:37.716  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Australia", imports=$6,466,156,304,113, exports=$6,457,274,981,999
+2020-01-28 22:27:37.716  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Austria", imports=$4,693,384,633,116, exports=$4,366,799,964,415
+2020-01-28 22:27:37.716  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Azerbaijan", imports=$175,937,176,276, exports=$445,786,578,451
+2020-01-28 22:27:37.716  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Bahamas", imports=$95,357,038,754, exports=$27,781,658,550
+2020-01-28 22:27:37.717  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Bahrain", imports=$383,451,349,965, exports=$454,172,159,687
+2020-01-28 22:27:37.718  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Bangladesh", imports=$690,176,313,765, exports=$493,720,058,245
+2020-01-28 22:27:37.718  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Barbados", imports=$50,612,540,928, exports=$19,045,806,716
+2020-01-28 22:27:37.718  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Belarus", imports=$871,564,302,422, exports=$785,837,732,412
+2020-01-28 22:27:37.719  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Belgium", imports=$11,414,165,874,659, exports=$12,081,522,398,108
+2020-01-28 22:27:37.719  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Belgium-Luxembourg", imports=$1,166,391,615,180, exports=$1,275,544,880,298
+2020-01-28 22:27:37.719  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Belize", imports=$26,507,225,235, exports=$12,772,174,560
+2020-01-28 22:27:37.720  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Benin", imports=$57,933,351,227, exports=$17,188,742,420
+2020-01-28 22:27:37.720  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Bermuda", imports=$25,340,764,879, exports=$365,262,036
+2020-01-28 22:27:37.721  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Bhutan", imports=$10,343,896,443, exports=$7,898,910,751
+2020-01-28 22:27:37.721  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Bolivia (Plurinational State of)", imports=$160,427,320,348, exports=$205,016,420,508
+2020-01-28 22:27:37.721  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Bosnia Herzegovina", imports=$232,451,412,461, exports=$113,371,731,548
+2020-01-28 22:27:37.721  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Botswana", imports=$155,556,384,426, exports=$165,289,469,843
+2020-01-28 22:27:37.721  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Brazil", imports=$4,438,939,393,353, exports=$5,874,973,448,571
+2020-01-28 22:27:37.722  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Brunei Darussalam", imports=$52,435,793,834, exports=$152,763,795,214
+2020-01-28 22:27:37.722  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Bulgaria", imports=$751,724,160,576, exports=$592,486,351,063
+2020-01-28 22:27:37.722  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Burkina Faso", imports=$59,472,487,141, exports=$36,715,789,270
+2020-01-28 22:27:37.723  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Burundi", imports=$15,057,287,659, exports=$5,875,022,509
+2020-01-28 22:27:37.723  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Cabo Verde", imports=$19,212,168,358, exports=$8,576,229,010
+2020-01-28 22:27:37.724  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Cambodia", imports=$157,650,423,202, exports=$154,268,532,342
+2020-01-28 22:27:37.724  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Cameroon", imports=$122,796,685,122, exports=$106,063,255,358
+2020-01-28 22:27:37.724  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Canada", imports=$12,391,758,585,785, exports=$15,233,081,163,918
+2020-01-28 22:27:37.724  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Cayman Isds", imports=$3,689,599,100, exports=$0
+2020-01-28 22:27:37.725  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Central African Rep.", imports=$7,117,428,700, exports=$4,247,102,371
+2020-01-28 22:27:37.725  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Chad", imports=$379,822,208, exports=$0
+2020-01-28 22:27:37.725  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Chile", imports=$1,503,746,203,390, exports=$1,995,795,200,692
+2020-01-28 22:27:37.725  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="China", imports=$30,029,209,242,541, exports=$31,559,095,340,109
+2020-01-28 22:27:37.725  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="China, Hong Kong SAR", imports=$10,964,491,701,118, exports=$18,850,138,721,705
+2020-01-28 22:27:37.726  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="China, Macao SAR", imports=$196,093,884,658, exports=$82,552,737,654
+2020-01-28 22:27:37.726  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Colombia", imports=$1,075,923,893,758, exports=$1,185,514,775,141
+2020-01-28 22:27:37.726  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Comoros", imports=$2,835,813,166, exports=$311,324,201
+2020-01-28 22:27:37.756  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Congo", imports=$77,772,296,010, exports=$142,288,592,207
+2020-01-28 22:27:37.757  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Cook Isds", imports=$1,338,833,772, exports=$106,604,949
+2020-01-28 22:27:37.757  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Costa Rica", imports=$341,579,224,437, exports=$253,783,651,999
+2020-01-28 22:27:37.757  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Croatia", imports=$586,628,530,088, exports=$342,334,149,063
+2020-01-28 22:27:37.758  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Cuba", imports=$76,234,585,119, exports=$29,906,668,376
+2020-01-28 22:27:37.758  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Cyprus", imports=$235,802,280,474, exports=$94,879,164,729
+2020-01-28 22:27:37.758  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Czech Rep.", imports=$2,655,080,229,177, exports=$2,649,353,522,079
+2020-01-28 22:27:37.758  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Côte d'Ivoire", imports=$200,949,412,225, exports=$306,234,552,473
+2020-01-28 22:27:37.759  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Denmark", imports=$2,588,383,197,370, exports=$3,120,192,529,063
+2020-01-28 22:27:37.759  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Djibouti", imports=$1,020,115,013, exports=$908,894,136
+2020-01-28 22:27:37.759  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Dominica", imports=$4,454,077,049, exports=$1,590,812,536
+2020-01-28 22:27:37.759  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Dominican Rep.", imports=$290,444,364,673, exports=$165,509,898,148
+2020-01-28 22:27:37.759  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="EU-28", imports=$43,422,568,976,840, exports=$37,138,225,346,921
+2020-01-28 22:27:37.759  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Ecuador", imports=$432,079,611,032, exports=$552,393,119,628
+2020-01-28 22:27:37.760  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Egypt", imports=$1,173,777,204,347, exports=$571,013,705,449
+2020-01-28 22:27:37.760  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="El Salvador", imports=$245,857,666,787, exports=$118,906,150,867
+2020-01-28 22:27:37.760  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Eritrea", imports=$698,070,660, exports=$13,738,916
+2020-01-28 22:27:37.760  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Estonia", imports=$367,418,759,087, exports=$313,192,905,212
+2020-01-28 22:27:37.761  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Ethiopia", imports=$230,020,640,447, exports=$73,294,890,111
+2020-01-28 22:27:37.761  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="FS Micronesia", imports=$3,114,483,846, exports=$294,413,364
+2020-01-28 22:27:37.761  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Faeroe Isds", imports=$14,312,609,672, exports=$15,105,432,741
+2020-01-28 22:27:37.761  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Fiji", imports=$45,971,430,458, exports=$30,822,475,216
+2020-01-28 22:27:37.761  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Finland", imports=$1,987,660,316,948, exports=$1,932,684,049,116
+2020-01-28 22:27:37.762  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Fmr Fed. Rep. of Germany", imports=$1,250,275,888,564, exports=$1,373,483,360,182
+2020-01-28 22:27:37.762  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Fmr Sudan", imports=$133,555,161,401, exports=$124,489,621,936
+2020-01-28 22:27:37.762  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="France", imports=$15,316,780,751,021, exports=$14,066,642,734,530
+2020-01-28 22:27:37.762  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="French Guiana", imports=$2,207,077,818, exports=$436,792,399
+2020-01-28 22:27:37.762  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="French Polynesia", imports=$45,442,863,082, exports=$6,985,446,469
+2020-01-28 22:27:37.763  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Gabon", imports=$28,968,882,338, exports=$109,856,378,335
+2020-01-28 22:27:37.763  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Gambia", imports=$8,666,763,936, exports=$2,196,244,925
+2020-01-28 22:27:37.763  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Georgia", imports=$125,646,469,682, exports=$45,636,059,638
+2020-01-28 22:27:37.763  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Germany", imports=$28,003,942,705,660, exports=$30,693,229,416,853
+2020-01-28 22:27:37.763  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Ghana", imports=$162,026,299,458, exports=$180,774,275,476
+2020-01-28 22:27:37.763  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Greece", imports=$1,893,559,503,444, exports=$831,137,316,341
+2020-01-28 22:27:37.764  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Greenland", imports=$22,501,329,905, exports=$12,169,374,682
+2020-01-28 22:27:37.764  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Grenada", imports=$5,697,895,504, exports=$919,643,363
+2020-01-28 22:27:37.764  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Guadeloupe", imports=$5,091,544,252, exports=$500,959,707
+2020-01-28 22:27:37.764  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Guatemala", imports=$315,192,144,084, exports=$185,264,644,056
+2020-01-28 22:27:37.765  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Guinea", imports=$29,867,848,397, exports=$28,661,671,803
+2020-01-28 22:27:37.765  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Guinea-Bissau", imports=$390,045,584, exports=$140,104,723
+2020-01-28 22:27:37.765  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Guyana", imports=$34,519,621,423, exports=$30,135,584,161
+2020-01-28 22:27:37.765  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Haiti", imports=$0, exports=$1,347,125,413
+2020-01-28 22:27:37.766  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Honduras", imports=$122,067,085,302, exports=$56,070,915,585
+2020-01-28 22:27:37.766  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Hungary", imports=$1,898,781,368,574, exports=$1,805,465,670,881
+2020-01-28 22:27:37.766  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Iceland", imports=$130,490,745,762, exports=$127,306,072,884
+2020-01-28 22:27:37.766  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="India", imports=$7,852,757,424,133, exports=$5,074,536,760,447
+2020-01-28 22:27:37.766  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Indonesia", imports=$2,915,342,137,289, exports=$3,824,684,399,004
+2020-01-28 22:27:37.767  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Iran", imports=$480,376,067,160, exports=$1,034,554,259,508
+2020-01-28 22:27:37.767  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Iraq", imports=$51,232,240,548, exports=$994,420,836,791
+2020-01-28 22:27:37.767  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Ireland", imports=$1,936,183,540,551, exports=$3,135,297,328,862
+2020-01-28 22:27:37.767  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Israel", imports=$1,551,688,731,288, exports=$1,501,212,784,744
+2020-01-28 22:27:37.767  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Italy", imports=$11,478,212,550,454, exports=$11,122,100,801,684
+2020-01-28 22:27:37.768  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Jamaica", imports=$161,245,150,000, exports=$49,738,950,509
+2020-01-28 22:27:37.768  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Japan", imports=$20,160,105,342,378, exports=$17,002,378,902,522
+2020-01-28 22:27:37.768  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Jordan", imports=$377,913,674,411, exports=$176,585,223,820
+2020-01-28 22:27:37.768  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Kazakhstan", imports=$593,757,004,329, exports=$1,436,982,554,229
+2020-01-28 22:27:37.768  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Kenya", imports=$146,777,881,414, exports=$79,838,495,710
+2020-01-28 22:27:37.768  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Kiribati", imports=$1,586,010,126, exports=$127,328,416
+2020-01-28 22:27:37.769  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Kuwait", imports=$332,605,820,907, exports=$1,557,687,908,264
+2020-01-28 22:27:37.769  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Kyrgyzstan", imports=$65,498,591,366, exports=$33,088,620,513
+2020-01-28 22:27:37.769  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Lao People's Dem. Rep.", imports=$25,469,742,515, exports=$24,860,670,097
+2020-01-28 22:27:37.769  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Latvia", imports=$281,352,936,516, exports=$187,280,897,684
+2020-01-28 22:27:37.770  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Lebanon", imports=$333,301,781,806, exports=$61,076,868,458
+2020-01-28 22:27:37.770  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Lesotho", imports=$16,825,066,038, exports=$6,603,186,763
+2020-01-28 22:27:37.770  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Libya", imports=$55,369,978,158, exports=$278,387,976,955
+2020-01-28 22:27:37.770  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Lithuania", imports=$558,311,874,906, exports=$474,092,668,671
+2020-01-28 22:27:37.771  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Luxembourg", imports=$443,273,965,738, exports=$266,722,475,171
+2020-01-28 22:27:37.771  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Madagascar", imports=$62,077,309,906, exports=$39,630,482,973
+2020-01-28 22:27:37.771  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Malawi", imports=$42,511,017,778, exports=$31,987,416,226
+2020-01-28 22:27:37.771  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Malaysia", imports=$3,659,356,076,986, exports=$4,236,570,599,862
+2020-01-28 22:27:37.772  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Maldives", imports=$29,438,125,502, exports=$2,984,476,999
+2020-01-28 22:27:37.772  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Mali", imports=$48,550,828,247, exports=$24,614,910,011
+2020-01-28 22:27:37.772  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Malta", imports=$152,182,253,028, exports=$96,942,606,746
+2020-01-28 22:27:37.772  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Martinique", imports=$4,866,387,585, exports=$692,321,704
+2020-01-28 22:27:37.772  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Mauritania", imports=$41,353,558,364, exports=$31,323,977,034
+2020-01-28 22:27:37.773  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Mauritius", imports=$110,098,742,771, exports=$67,749,089,213
+2020-01-28 22:27:37.773  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Mayotte", imports=$4,353,342,377, exports=$69,107,876
+2020-01-28 22:27:37.773  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Mexico", imports=$6,648,439,116,303, exports=$6,361,457,659,653
+2020-01-28 22:27:37.773  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Mongolia", imports=$33,108,620,650, exports=$45,537,006,091
+2020-01-28 22:27:37.773  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Montenegro", imports=$33,528,490,167, exports=$6,814,403,932
+2020-01-28 22:27:37.774  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Montserrat", imports=$539,934,439, exports=$65,403,121
+2020-01-28 22:27:37.774  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Morocco", imports=$673,427,653,907, exports=$360,050,581,938
+2020-01-28 22:27:37.774  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Mozambique", imports=$85,450,727,694, exports=$45,530,394,133
+2020-01-28 22:27:37.774  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Myanmar", imports=$85,441,623,028, exports=$69,346,221,660
+2020-01-28 22:27:37.775  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Namibia", imports=$94,880,359,284, exports=$97,930,874,262
+2020-01-28 22:27:37.775  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Nepal", imports=$55,973,222,862, exports=$11,272,488,959
+2020-01-28 22:27:37.775  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Neth. Antilles", imports=$5,431,132,615, exports=$699,048,999
+2020-01-28 22:27:37.776  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Netherlands", imports=$8,798,519,167,076, exports=$10,312,448,092,990
+2020-01-28 22:27:37.776  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="New Caledonia", imports=$46,249,517,715, exports=$26,436,236,507
+2020-01-28 22:27:37.777  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="New Zealand", imports=$715,651,775,698, exports=$876,967,769,457
+2020-01-28 22:27:37.777  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Nicaragua", imports=$79,873,441,769, exports=$44,011,235,338
+2020-01-28 22:27:37.778  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Niger", imports=$30,512,224,135, exports=$22,825,630,812
+2020-01-28 22:27:37.778  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Nigeria", imports=$495,213,224,976, exports=$969,191,899,795
+2020-01-28 22:27:37.779  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Norway", imports=$1,612,648,034,226, exports=$2,429,308,733,411
+2020-01-28 22:27:37.780  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Oman", imports=$406,653,639,371, exports=$695,328,948,684
+2020-01-28 22:27:37.781  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Other Asia, nes", imports=$4,144,737,558,923, exports=$4,592,059,679,653
+2020-01-28 22:27:37.781  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Pakistan", imports=$548,831,406,535, exports=$340,840,234,562
+2020-01-28 22:27:37.781  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Palau", imports=$1,630,624,955, exports=$35,228,734
+2020-01-28 22:27:37.782  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Panama", imports=$204,227,586,945, exports=$194,455,660,747
+2020-01-28 22:27:37.782  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Papua New Guinea", imports=$26,070,157,079, exports=$30,948,228,731
+2020-01-28 22:27:37.782  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Paraguay", imports=$164,354,804,660, exports=$122,495,429,036
+2020-01-28 22:27:37.782  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Peru", imports=$519,196,110,110, exports=$676,451,460,180
+2020-01-28 22:27:37.782  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Philippines", imports=$1,230,655,997,521, exports=$993,369,979,213
+2020-01-28 22:27:37.782  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Poland", imports=$2,984,569,590,455, exports=$2,669,675,809,474
+2020-01-28 22:27:37.783  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Portugal", imports=$1,670,217,844,109, exports=$1,171,895,187,865
+2020-01-28 22:27:37.783  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Qatar", imports=$340,300,677,139, exports=$1,241,796,959,047
+2020-01-28 22:27:37.783  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Rep. of Korea", imports=$7,752,529,952,693, exports=$8,460,978,400,810
+2020-01-28 22:27:37.783  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Rep. of Moldova", imports=$70,712,522,076, exports=$45,094,893,149
+2020-01-28 22:27:37.783  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Romania", imports=$1,132,722,815,880, exports=$871,545,109,762
+2020-01-28 22:27:37.783  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Russian Federation", imports=$3,642,039,329,121, exports=$6,564,472,499,199
+2020-01-28 22:27:37.784  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Rwanda", imports=$20,779,762,019, exports=$8,842,242,436
+2020-01-28 22:27:37.784  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Réunion", imports=$5,905,971,102, exports=$639,994,335
+2020-01-28 22:27:37.784  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Saint Kitts and Nevis", imports=$4,094,824,621, exports=$883,868,300
+2020-01-28 22:27:37.784  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Saint Lucia", imports=$12,152,604,585, exports=$3,565,184,515
+2020-01-28 22:27:37.784  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Saint Vincent and the Grenadines", imports=$5,675,507,568, exports=$1,271,535,550
+2020-01-28 22:27:37.785  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Samoa", imports=$5,225,619,206, exports=$1,259,063,260
+2020-01-28 22:27:37.785  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Sao Tome and Principe", imports=$1,846,392,628, exports=$222,241,411
+2020-01-28 22:27:37.785  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Saudi Arabia", imports=$1,926,917,000,103, exports=$4,023,988,218,166
+2020-01-28 22:27:37.785  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Senegal", imports=$97,163,302,344, exports=$39,286,890,314
+2020-01-28 22:27:37.785  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Serbia", imports=$250,769,824,533, exports=$149,527,210,347
+2020-01-28 22:27:37.785  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Serbia and Montenegro", imports=$52,467,773,809, exports=$24,417,009,403
+2020-01-28 22:27:37.786  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Seychelles", imports=$19,648,625,456, exports=$11,021,545,876
+2020-01-28 22:27:37.786  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Sierra Leone", imports=$5,739,058,941, exports=$1,265,493,049
+2020-01-28 22:27:37.786  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Singapore", imports=$5,720,611,127,671, exports=$6,335,882,334,668
+2020-01-28 22:27:37.786  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Slovakia", imports=$1,015,717,222,402, exports=$991,625,782,332
+2020-01-28 22:27:37.786  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Slovenia", imports=$454,941,907,679, exports=$397,212,501,128
+2020-01-28 22:27:37.787  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="So. African Customs Union", imports=$221,786,790,239, exports=$254,876,820,776
+2020-01-28 22:27:37.787  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Solomon Isds", imports=$8,409,222,912, exports=$6,817,354,952
+2020-01-28 22:27:37.787  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="South Africa", imports=$1,336,776,623,235, exports=$1,238,714,709,979
+2020-01-28 22:27:37.787  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Spain", imports=$6,664,510,414,990, exports=$5,233,788,264,062
+2020-01-28 22:27:37.787  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Sri Lanka", imports=$266,121,164,807, exports=$160,517,900,852
+2020-01-28 22:27:37.788  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="State of Palestine", imports=$45,255,350,719, exports=$9,126,037,142
+2020-01-28 22:27:37.788  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Sudan", imports=$17,940,309,635, exports=$10,166,269,521
+2020-01-28 22:27:37.788  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Suriname", imports=$24,580,483,078, exports=$43,411,675,196
+2020-01-28 22:27:37.788  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Swaziland", imports=$12,082,793,938, exports=$13,633,225,132
+2020-01-28 22:27:37.788  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Sweden", imports=$2,869,701,560,796, exports=$3,262,936,243,948
+2020-01-28 22:27:37.788  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Switzerland", imports=$4,106,391,316,657, exports=$4,380,822,133,916
+2020-01-28 22:27:37.788  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Syria", imports=$122,358,281,278, exports=$95,040,370,148
+2020-01-28 22:27:37.789  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="TFYR of Macedonia", imports=$104,144,970,511, exports=$61,844,406,928
+2020-01-28 22:27:37.789  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Tajikistan", imports=$643,966,000, exports=$692,346,000
+2020-01-28 22:27:37.789  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Thailand", imports=$3,206,961,111,818, exports=$3,155,223,995,626
+2020-01-28 22:27:37.789  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Timor-Leste", imports=$818,230,023, exports=$433,925,233
+2020-01-28 22:27:37.789  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Togo", imports=$23,738,254,333, exports=$15,209,369,044
+2020-01-28 22:27:37.789  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Tonga", imports=$2,572,218,689, exports=$256,686,754
+2020-01-28 22:27:37.790  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Trinidad and Tobago", imports=$152,300,305,598, exports=$215,524,138,075
+2020-01-28 22:27:37.790  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Tunisia", imports=$406,877,946,436, exports=$286,264,000,632
+2020-01-28 22:27:37.790  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Turkey", imports=$3,517,424,254,311, exports=$2,075,304,938,465
+2020-01-28 22:27:37.790  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Turkmenistan", imports=$5,987,353,689, exports=$5,201,180,675
+2020-01-28 22:27:37.790  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Turks and Caicos Isds", imports=$6,372,843,640, exports=$272,767,882
+2020-01-28 22:27:37.790  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Tuvalu", imports=$141,042,278, exports=$652,513
+2020-01-28 22:27:37.790  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="USA", imports=$41,623,800,475,747, exports=$31,700,102,843,309
+2020-01-28 22:27:37.791  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Uganda", imports=$68,359,360,431, exports=$34,128,229,548
+2020-01-28 22:27:37.791  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Ukraine", imports=$895,635,170,690, exports=$874,576,696,060
+2020-01-28 22:27:37.791  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="United Arab Emirates", imports=$3,968,365,297,424, exports=$6,129,567,032,802
+2020-01-28 22:27:37.791  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="United Kingdom", imports=$13,178,388,520,244, exports=$9,763,266,906,260
+2020-01-28 22:27:37.791  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="United Rep. of Tanzania", imports=$133,794,115,399, exports=$67,153,551,095
+2020-01-28 22:27:37.791  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Uruguay", imports=$144,114,057,568, exports=$120,895,355,404
+2020-01-28 22:27:37.792  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Vanuatu", imports=$1,626,207,648, exports=$306,753,461
+2020-01-28 22:27:37.792  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Venezuela", imports=$576,737,605,090, exports=$897,365,929,625
+2020-01-28 22:27:37.792  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Viet Nam", imports=$1,259,317,064,020, exports=$1,132,453,628,615
+2020-01-28 22:27:37.792  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Wallis and Futuna Isds", imports=$356,512,334, exports=$0
+2020-01-28 22:27:37.792  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Yemen", imports=$133,261,763,197, exports=$71,615,411,671
+2020-01-28 22:27:37.793  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Zambia", imports=$89,849,864,777, exports=$92,277,699,719
+2020-01-28 22:27:37.793  INFO 61680 --- [ntainer#0-0-C-1] c.h.y.r.k.CommodityTradeSummaryListener  : Country or area="Zimbabwe", imports=$79,593,463,656, exports=$68,338,762,312
